@@ -1,0 +1,7 @@
+/.env
+/.venv
+/__pycache__
+/agent_engine_app.py.bak
+/google_adk-0.0.2.dev20250326+nightly740999296-py3-none-any.whl
+/google_adk-0.0.2.dev20250404+nightly743987168-py3-none-any.whl
+/google_genai_agents-0.0.2.dev20250304+733376416-py3-none-any.whl
