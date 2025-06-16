@@ -11,7 +11,7 @@ def get_today_date():
     return today.strftime("%Y-%m-%d")
     
 
-currency_converter_agent = Agent(
+root_agent = Agent(
     model="gemini-2.0-flash-exp",
     name="currency_converter_agent",
     description="A helpful AI assistant to convert currency.",
@@ -30,6 +30,7 @@ Follow the steps.
 4. Explain the currency conversion plan.
 5. Calculate and display the converted currency value.
 6. Present the consolidated, formatted conversion result.
+7. Verify the conversation history to make sure you answered the question in full.
 
 """,
     #greeting_prompt="Welcome to the currency Analyst Agent!",
@@ -37,5 +38,5 @@ Follow the steps.
         currencytool.get_exchange_rate,
         get_today_date,
     ],
-    #flow="auto",
+
 )

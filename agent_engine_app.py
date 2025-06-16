@@ -3,15 +3,16 @@ import os
 from vertexai import agent_engines
 from vertexai.preview.reasoning_engines import AdkApp
 from dotenv import load_dotenv
-from agent import currency_converter_agent
+from agent import root_agent
 
 
 
 def deploy_agent_engine_app():
-    load_dotenv() 
+    load_dotenv(override=True) 
 
     GOOGLE_CLOUD_PROJECT = os.environ["GOOGLE_CLOUD_PROJECT"]
     GOOGLE_CLOUD_LOCATION = os.environ["GOOGLE_CLOUD_LOCATION"]
+
     STAGING_BUCKET = f"gs://{GOOGLE_CLOUD_PROJECT}-agent-engine-deploy"
     AGENT_DISPLAY_NAME="Currency Analyst"
     
@@ -24,7 +25,7 @@ def deploy_agent_engine_app():
     )
 
     app = AdkApp(
-        agent=currency_converter_agent,
+        agent=root_agent,
         enable_tracing=True,
     )
 
